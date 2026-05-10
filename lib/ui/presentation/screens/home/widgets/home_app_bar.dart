@@ -95,12 +95,12 @@ class _HomeAppBarState extends State<HomeAppBar> with SingleTickerProviderStateM
                     ),
                   ),
                   Positioned(
-                    top: 7,
-                    left: 20,
+                    top: 6,
+                    left: 30,
                     child: FadeTransition(
                       opacity: _balanceFadeAnimation,
                       child: Text('\$ 1234', style: TextStyle(
-                          fontSize: 14 ,
+                          fontSize: 16 ,
                           fontWeight: .w500,
                           color: AppColors.primary
                       )
