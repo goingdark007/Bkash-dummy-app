@@ -20,15 +20,13 @@ class AppBarBkash extends StatelessWidget {
           top: 0,
           right: 0,
           child: Container(
+            height: 12,
+            width: 12,
 
             decoration: BoxDecoration(
                 color: AppColors.primary,
                 border: Border.all(color: AppColors.white, width: 2),
                 shape: BoxShape.circle
-            ),
-            child: SizedBox(
-              height: 8,
-              width: 8,
             ),
           ),
         )

@@ -47,6 +47,7 @@ class AppStrings {
   // Quick Features
   static const String quickFeatures = 'Quick Features';
   static const String myOffers = 'My Offers';
+  static const String myBkash = 'My Bkash';
   static const String coupons = 'Coupons';
   static const String rewards = 'Rewards';
   static const String locked = 'Locked';
