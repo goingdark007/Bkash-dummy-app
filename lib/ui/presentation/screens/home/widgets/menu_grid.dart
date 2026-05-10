@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:of25_bkash_app/data/models/home_menu_item_model.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../core/app_colors.dart';
@@ -45,42 +46,14 @@ class _MenuGridState extends State<MenuGrid> with SingleTickerProviderStateMixin
 
         return Column(
           children: [
-            GridView.builder(
-                shrinkWrap: true,
-                padding: .zero,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4,
-                  mainAxisSpacing: 16,
-                  crossAxisSpacing: 8,
-                  childAspectRatio: 0.78,
-                ),
-                itemCount: menuItems.length,
-                itemBuilder: (context, index){
-                  return MenuGridItem(item: menuItems[index]);
-                }
-            ),
+            buildGridView(menuItems),
             AnimatedSize(
               duration: const Duration(milliseconds: 600),
               reverseDuration: const Duration(milliseconds: 500),
               curve: Curves.easeInOut,
               alignment: Alignment.topCenter,
               child: provider.isExpanded
-                  ? GridView.builder(
-                  shrinkWrap: true,
-                  padding: .zero,
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
-                    mainAxisSpacing: 16,
-                    crossAxisSpacing: 8,
-                    childAspectRatio: 0.78,
-                  ),
-                  itemCount: remainingItems.length,
-                  itemBuilder: (context, index){
-                    return MenuGridItem(item: remainingItems[index]);
-                  }
-              )
+                  ? buildGridView(remainingItems)
                   : const SizedBox.shrink(),
             ),
             Stack(
@@ -102,7 +75,6 @@ class _MenuGridState extends State<MenuGrid> with SingleTickerProviderStateMixin
 
                 Container(
                   height: 70,
-                    foregroundDecoration: BoxDecoration(),
 
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
@@ -155,5 +127,23 @@ class _MenuGridState extends State<MenuGrid> with SingleTickerProviderStateMixin
         );
       },
     );
+  }
+
+  GridView buildGridView(List<HomeMenuItemModel> menuItems) {
+    return GridView.builder(
+              shrinkWrap: true,
+              padding: .zero,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4,
+                mainAxisSpacing: 16,
+                crossAxisSpacing: 8,
+                childAspectRatio: 0.78,
+              ),
+              itemCount: menuItems.length,
+              itemBuilder: (context, index){
+                return MenuGridItem(item: menuItems[index]);
+              }
+          );
   }
 }
