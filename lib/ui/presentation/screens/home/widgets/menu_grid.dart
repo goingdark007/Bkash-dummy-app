@@ -19,6 +19,7 @@ class _MenuGridState extends State<MenuGrid> with SingleTickerProviderStateMixin
 
   late final AnimationController _animationController;
   late final Animation<double> rotateAnimation;
+  late final Animation<double> fadeAnimation;
 
   @override
   void initState() {
@@ -27,6 +28,11 @@ class _MenuGridState extends State<MenuGrid> with SingleTickerProviderStateMixin
     rotateAnimation = Tween<double>(begin: 0.0, end: 0.5).animate(CurvedAnimation(
       parent: _animationController,
       curve: Curves.easeInOut,
+    ));
+    fadeAnimation = Tween<double>(begin: 0.7, end: 0.0).animate(CurvedAnimation(
+      parent: _animationController,
+      curve: const Interval(0.0, 0.2,curve: Curves.easeIn),
+      reverseCurve: const Interval(0.0, 0.2, curve: Curves.easeOut)
     ));
   }
 
@@ -60,16 +66,19 @@ class _MenuGridState extends State<MenuGrid> with SingleTickerProviderStateMixin
               alignment: .center,
               children: [
                 if(!provider.isExpanded)
-                  Opacity(
-                    opacity: 0.7,
-                    child: Row(
-                      spacing: 12,
-                      children: [
+                  FadeTransition(
+                    opacity: fadeAnimation,
+                    child: Opacity(
+                      opacity: 0.7,
+                      child: Row(
+                        spacing: 12,
+                        children: [
 
-                        for(int i=0; i< provider.lastFourItems.length; i++)
-                          MenuGridItem(item: provider.lastFourItems[i])
+                          for(int i=0; i< provider.lastFourItems.length; i++)
+                            MenuGridItem(item: provider.lastFourItems[i])
 
-                      ],
+                        ],
+                      ),
                     ),
                   ),
 
