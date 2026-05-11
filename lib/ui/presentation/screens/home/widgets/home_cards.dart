@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 import '../../../../../core/app_colors.dart';
 import '../../../../../core/app_strings.dart';
@@ -13,6 +14,8 @@ class HomeCards extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 22.0),
       child: Row(
+
+        //mainAxisAlignment: .end,
         children: [
           Container(
             height: 180,
@@ -55,9 +58,45 @@ class HomeCards extends StatelessWidget {
 
               ],
             ),
+          ),
+          const SizedBox(width: 35),
+          SizedBox(
+            width: 180,
+            height: 185,
+            child: GridView.count(
+              padding: .zero,
+              crossAxisCount: 2,
+              crossAxisSpacing: 0,
+              mainAxisSpacing: 0,
+              shrinkWrap: true,
+              ///childAspectRatio: 1.0,
+              physics: const NeverScrollableScrollPhysics(),
+              children: [
+                buildGrid(AppColors.primary, 'bkash bundle'),
+                buildGrid(Colors.pink.shade200, 'bkash offer'),
+                buildGrid(Colors.green, 'bkash bundle'),
+                buildGrid(Colors.orange, 'bkash offer'),
+              ],
+            ),
           )
         ],
       ),
     );
+  }
+
+  Column buildGrid(Color color, String text) {
+    return Column(
+      crossAxisAlignment: .center,
+                mainAxisAlignment: .center,
+                mainAxisSize: .min,
+                children: [
+                  HugeIcon(
+                    icon: HugeIcons.strokeRoundedGiftCard02,
+                    size: 60,
+                    color: color
+                  ),
+                  Text(text, style: TextStyle(fontSize: 12, color: AppColors.textGrey, fontWeight: FontWeight.w500)),
+                ],
+              );
   }
 }

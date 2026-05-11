@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:of25_bkash_app/core/app_strings.dart';
 
 
 import '../../../../../core/app_colors.dart';
@@ -44,9 +45,12 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 15),
               Image.asset(AssetPaths.offerBanner,),
               const SizedBox(height: 15),
-              HomeRow(),
+              HomeRow(text: AppStrings.myBkash, icon: Icons.tune_rounded, sideText: 'Edit'),
               const SizedBox(height: 10),
-              HomeCards()
+              HomeCards(),
+              const SizedBox(height: 15),
+              HomeRow(text: 'bkash bundle', icon: Icons.arrow_drop_down_rounded, sideText: 'See all'),
+              const SizedBox(height: 20),
             ],
           )
       ),
