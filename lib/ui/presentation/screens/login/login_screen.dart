@@ -72,8 +72,9 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 2),
               const Text(
                 AppStrings.loginSubtitle,
-                style: TextStyle(fontSize: 15, color: AppColors.textDark),
+                style: TextStyle(fontSize: 26, color: AppColors.textDark),
               ),
+              const SizedBox(height: 10),
               TextField(
                 controller: _accountController,
                 keyboardType: TextInputType.phone,
@@ -85,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: const InputDecoration(
                   labelText: AppStrings.accountNumber,
                   labelStyle: TextStyle(
-                    fontSize: 13,
+                    fontSize: 15,
                     color: AppColors.textGrey,
                   ),
                   border: UnderlineInputBorder(),
@@ -93,7 +94,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: AppColors.primary),
                   ),
-                  enabledBorder: InputBorder.none,
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: AppColors.textGrey, width: 1)
+                  ),
                   contentPadding: EdgeInsets.only(bottom: 8),
                 ),
               ),
@@ -114,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: InputDecoration(
                   labelText: AppStrings.bkashPin,
                   labelStyle: const TextStyle(
-                    fontSize: 13,
+                    fontSize: 15,
                     color: AppColors.textGrey,
                     fontWeight: FontWeight.w600,
                   ),
@@ -128,7 +131,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   focusedBorder: const UnderlineInputBorder(
                     borderSide: BorderSide(color: AppColors.primary),
                   ),
-                  enabledBorder: InputBorder.none,
+                  enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.textGrey, width: 1)
+                  ),
                   contentPadding: const EdgeInsets.only(bottom: 8),
                   suffixIcon: const Icon(
                     Icons.fingerprint,
