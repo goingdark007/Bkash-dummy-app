@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:of25_bkash_app/ui/presentation/screens/login/login_screen.dart';
 
 import '../../../../core/app_colors.dart';
 import '../../../utils/asset_paths.dart';
-import '../home/views/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
 
@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   Future<void> _moveToHomeScreen() async {
     await Future.delayed(const Duration(seconds: 3));
     if(!mounted) return;
-    Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+    Navigator.pushReplacementNamed(context, LoginScreen.routeName);
   }
 
 
