@@ -10,8 +10,7 @@ A dummy clone of the **bKash** app built with Flutter. This project focuses on r
 
 | Splash Screen | Login Screen | Home Screen |
 |:---:|:---:|:---:|
-| <img src="screenshots/splash.png" width="250" alt="Splash Screen"> | <img src="screenshots/login.png" width="250" alt="Login Screen"> | <img src="screenshots/home.png" width="250" alt="Home Screen"> |
-| *[Insert Image 1]* | *[Insert Image 2]* | *[Insert Image 3]* |
+| <img width="147.5" height="300" alt="Screenshot_20260512_105400" src="https://github.com/user-attachments/assets/afb10dfd-1f1a-4330-bd6c-b8003f985d60" /> | <img width="147.5" height="300" alt="Screenshot_20260512_105408" src="https://github.com/user-attachments/assets/0149d672-98a0-47b1-be23-a61157cd675a" /> | <img width="147.5" height="300" alt="Screenshot_20260512_105426" src="https://github.com/user-attachments/assets/31232029-ae66-4c64-a058-ba5567d808aa" /> |
 
 ---
 
